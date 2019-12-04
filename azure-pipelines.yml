@@ -33,3 +33,8 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'myWebsiteName'
 
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'DevOpsCon'
+    appName: 'myWebsiteName'
+    package: $(System.ArtifactsDirectory)/**/*.zip
